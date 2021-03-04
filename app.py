@@ -25,7 +25,7 @@ def get_image():
     photo = request.files['photo']
     # photo.save(filename)
     print('Image Saved..')
-    retutn "done"
+    return "done"
 
 
 if __name__ == '__main__':
