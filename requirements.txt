@@ -1,4 +1,4 @@
-opencv-python~=4.4.0.46
+opencv-python-headless==4.2.0.32
 numpy~=1.19.2
 matplotlib~=3.3.2
 flask~=1.1.2
