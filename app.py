@@ -23,10 +23,10 @@ def get_image():
     filename = UPLOAD_FOLDER + str(np.random.randint(0, 5000)) + '.png'
     print('Image is incoming')
     photo = request.files['photo']
-    photo.save(filename)
+    # photo.save(filename)
     print('Image Saved..')
-    if check_skin(filename):
-        preds_dict = predict_class(filename)
+    if check_skin(photo):
+        preds_dict = predict_class(photo)
 
         dict_dis = sorted(preds_dict.items(), key=lambda x: x[1], reverse=True)
         dict_dis = dict(sorted(preds_dict.items(), key=lambda x: x[1], reverse=True)[:3])
