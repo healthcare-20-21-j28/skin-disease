@@ -25,29 +25,7 @@ def get_image():
     photo = request.files['photo']
     # photo.save(filename)
     print('Image Saved..')
-    if check_skin(photo):
-        preds_dict = predict_class(photo)
-
-        dict_dis = sorted(preds_dict.items(), key=lambda x: x[1], reverse=True)
-        dict_dis = dict(sorted(preds_dict.items(), key=lambda x: x[1], reverse=True)[:3])
-        print(dict_dis)
-
-        max_val = max(dict_dis, key=dict_dis.get)
-        if dict_dis[max_val] <= 30:
-            print('healthy')
-            return jsonify({'message': 'Healthy Skin Detected'})
-        else:
-            print('Done')
-            description = (disease_description(str(max_val)))
-            return jsonify({'message': str(max_val), 'percentage': str(dict_dis[max_val]),
-                            'description': description['description'],
-                            'symptoms': description['symptoms'],
-                            'causes': description['causes'],
-                            'treatement-1': description['treatement-1'],
-                            'treatement-2': description['treatement-2']})
-    else:
-        print({'message': 'Please upload image of Infected Area'})
-        return jsonify({'message': 'Please upload image of Infected Area'})
+    retutn "done"
 
 
 if __name__ == '__main__':
